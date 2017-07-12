@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<link rel="icon" type="image/icon" href="resources/image/favicon.ico">
+<link rel="shortcut icon" href="resources/image/favicon.ico" />
+
+<title>Área Administrativa</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="resources/css/admin.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<div class="container">
+		<div class="card card-container">
+			<!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+			<img id="profile-img" class="profile-img-card"
+				src="resources/image/logo.png" />
+			<p id="profile-name" class="profile-name-card"></p>
+			<form class="form-signin" action="login" method="post">
+				<span id="reauth-email" class="reauth-email"></span> <input
+					type="text" id="idLogin" name="login" class="form-control"
+					placeholder="Informe o login" required autofocus> <input
+					type="password" id="idPassword" name="senha" class="form-control"
+					placeholder="Informe a senha" required>
+				<div id="remember" class="checkbox">
+					<label> <input type="checkbox">
+						Manter-se logado
+					</label>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block btn-signin"
+					type="submit">Entrar</button>
+			</form>
+			<!-- /form -->
+			<a href="#" class="forgot-password"> Recuperar senha </a>
+		</div>
+		<!-- /card-container -->
+	</div>
+	<!-- /container -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="resources/js/admin.js"></script>
+</body>
+</html>

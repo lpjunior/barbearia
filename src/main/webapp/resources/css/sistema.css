@@ -1,0 +1,184 @@
+/* Formatação botão */
+#btn-top{
+    padding:10px;
+    position:fixed;
+    top:90%;
+    right:40px;
+    display:none;
+    font-size: 50px;
+    color: #298E1B;
+}
+#btn-top:hover {
+    text-decoration:none;
+}
+/*Formatação Menu*/
+.nav-pills  li.active  a, .nav-pills
+li.active a:focus,
+.nav-pills li.active a:hover{
+  background-color: green;
+}
+/* Fim Formatação Menu */
+
+/* Página Serviços */
+.help-block{
+    color:#b94a48;
+    }
+
+/*    --------------------------------------------------
+	:: General
+	-------------------------------------------------- */
+
+.content .content-footer p {
+	color:#6d6d6d;
+    font-size:12px;
+    text-align:center;
+}
+.content .content-footer p a {
+	color:inherit;
+	font-weight:bold;
+}
+/*Formatação Geral*/
+.titulo_pagina{
+ margin-top:10px;
+}
+/*Formatação Geral*/
+/*	--------------------------------------------------
+	:: Table Filter
+	-------------------------------------------------- */
+.panel {
+	border:1px solid #ddd;
+	background-color:#fcfcfc;
+}
+.panel .btn-group {
+	margin:15px 0 30px;
+}
+.panel .btn-group .btn {
+	transition:background-color .3s ease;
+}
+.table-filter {
+	background-color:#fff;
+	border-bottom:1px solid #eee;
+}
+.table-filter tbody tr:hover {
+	cursor:pointer;
+	background-color:#eee;
+}
+.table-filter tbody tr td {
+	padding:10px;
+	vertical-align:middle;
+	border-top-color:#eee;
+}
+.table-filter tbody tr.selected td {
+	background-color:#eee;
+}
+.table-filter tr td:first-child {
+	width:38px;
+}
+.table-filter tr td:nth-child(2) {
+	width:35px;
+}
+.ckbox {
+	position:relative;
+}
+.ckbox input[type="checkbox"] {
+	opacity:0;
+}
+.ckbox label {
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+.ckbox label:before {
+	content:'';
+	top:1px;
+	left:0;
+	width:18px;
+	height:18px;
+	display:block;
+	position:absolute;
+	border-radius:2px;
+	border:1px solid #bbb;
+	background-color:#fff;
+}
+.ckbox input[type="checkbox"]:checked + label:before {
+	border-color:#2BBCDE;
+	background-color:#2BBCDE;
+}
+.ckbox input[type="checkbox"]:checked + label:after {
+	top:3px;
+	left:3.5px;
+	content:'\e013';
+	color:#fff;
+	font-size:11px;
+	font-family:'Glyphicons Halflings';
+	position:absolute;
+}
+.table-filter .media-photo {
+	width:35px;
+}
+.table-filter .media-body {
+    /* display:block;*/ 
+    /* Had to use this style to force the div to expand (wasn't necessary with my bootstrap version 3.3.6) */
+}
+.table-filter .media-meta{
+	font-size:11px;
+	color:#999;
+}
+.table-filter .media .title {
+	color: #2BBCDE;
+	font-size:14px;
+	font-weight:bold;
+	
+	margin:0;
+}
+.table-filter .media .title span {
+	font-size:.8em;
+	margin-right:20px;
+}
+.ativo {
+	color:#5cb85c;
+	font-size:.8em;
+	margin-right:20px;		
+}
+.inativo {
+	color:#f0ad4e;
+	font-size:.8em;
+	margin-right:20px;
+}
+.table-filter .media {
+	font-size:14px;
+}
+.container-principal{
+	padding-top:20px;
+	
+}
+.painel-registro-coment{
+	padding:30px;
+}
+.icon_servico{
+				width:10px;
+				height:20px;
+			
+}
+.formatacao_td_image{
+ width: 100px;
+}
+/*Página Serviços */
+h1.page-header {
+    margin-top:-5px;
+}
+
+.sidebar {
+    padding-left: 0;
+}
+
+.main-container {
+    background:#FFF;
+    padding-top:15px;
+    margin-top:-20px;
+}
+
+.footer {
+    width:100%;
+}
