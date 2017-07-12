@@ -26,17 +26,28 @@ public class Equipe implements Serializable {
 	private String foto;
 	@Column(nullable = false)
 	private Integer tempoprof;
-
+	
 	public Equipe() {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Equipe(String nome, String desc, String foto, Integer tempoprof) {
+		this.nome = nome;
+		this.desc = desc;
+		this.foto = foto;
+		this.tempoprof = tempoprof;
+	}
+	
 	public Equipe(Integer id, String nome, String desc, String foto, Integer tempoprof) {
 		this.id = id;
 		this.nome = nome;
 		this.desc = desc;
 		this.foto = foto;
 		this.tempoprof = tempoprof;
+	}
+
+	public Equipe(Integer id) {
+		this.id = id;
 	}
 
 	public Integer getId() {

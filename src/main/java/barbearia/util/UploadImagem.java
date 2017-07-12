@@ -1,44 +1,49 @@
 package barbearia.util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.disk.DiskFileItemFactory;
-import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 public class UploadImagem {
-	public static String send(HttpServletRequest request)
-			throws ServletException, IOException {
-		String nomeImg = null;
-		System.out.println("chegou aqui!!!");
-		/* Identifica se o formulario é do tipo multipart/form-data */
-		if (ServletFileUpload.isMultipartContent(request)) {
-			try {
-				/* Faz o parse do request */
-				List<FileItem> multiparts = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
+	public static String save(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=UTF-8");
 
-				multiparts.forEach(System.out::println);
-				/* Escreve a o arquivo na pasta img */
-				for (FileItem item : multiparts) {
-					if (!item.isFormField()) {
-						nomeImg = UUID.randomUUID().toString().replace("-", "") + ".jpg";
-						item.write(new File(
-								request.getServletContext().getRealPath("resources") + File.separator + nomeImg));
-					}
-				}
+		final String path = request.getServletContext().getRealPath("resources") + File.separator + "image";
+		final Part filePart = request.getPart("foto");
+		final String fileName = UUID.randomUUID().toString().replace("-", "") + ".jpg";
+		OutputStream out = null;
+		InputStream filecontent = null;
 
-			} catch (Exception ex) {
-				request.setAttribute("message", "Upload de arquivo falhou devido a " + ex);
-				request.getRequestDispatcher("error.jsp").forward(request, null);
+		try {
+			out = new FileOutputStream(new File(path + File.separator + fileName));
+			filecontent = filePart.getInputStream();
+
+			int read = 0;
+			final byte[] bytes = new byte[1024];
+
+			while ((read = filecontent.read(bytes)) != -1) {
+				out.write(bytes, 0, read);
+			}
+		} catch (FileNotFoundException fne) {
+			fne.printStackTrace();
+			System.out.println(fne.getMessage());
+		} finally {
+			if (out != null) {
+				out.close();
+			}
+			if (filecontent != null) {
+				filecontent.close();
 			}
 		}
-
-		return nomeImg;
+		return fileName;
 	}
 }

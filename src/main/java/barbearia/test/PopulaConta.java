@@ -1,9 +1,9 @@
 package barbearia.test;
 
 import barbearia.entity.Administrador;
-import barbearia.persistence.AdministradorDAO;
-import barbearia.persistence.ComentarioDAO;
+import barbearia.entity.Equipe;
 import barbearia.service.AdministradorService;
+import barbearia.service.EquipeService;
 
 @SuppressWarnings("unused")
 public class PopulaConta {
@@ -15,8 +15,8 @@ public class PopulaConta {
 		Administrador admin3 = new Administrador();
 
 //		admin1.setId(1);
-		admin1.setLogin("luispaulojr");
-		admin1.setSenha("123");
+//		admin1.setLogin("luispaulojr");
+//		admin1.setSenha("123");
 		
 //		admin2.setLogin("lpjr");
 //		admin2.setSenha("123");
@@ -29,9 +29,10 @@ public class PopulaConta {
 //		as.save(admin2);
 //		as.save(admin3);
 //		System.out.println(admin1.getLogin());
-		System.out.println(as.buscaLogin(admin1));
+//		System.out.println(as.buscaLogin(admin1));
 //		System.out.println(as.buscaId(admin1));
-//		new AdministradorDAO().findAll().forEach(System.out::println);
+//		new EquipeService().busca().forEach(System.out::println);
+		new EquipeService().delete(new Equipe(5));
 //		new ComentarioDAO().findAtivo().forEach(System.out::println);
 	}
 }

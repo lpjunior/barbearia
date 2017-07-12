@@ -36,6 +36,16 @@ public class Servico implements Serializable {
 		this.valor = valor;
 	}
 
+	public Servico(String descricao, Double valor, String imagem) {
+		this.imagem = imagem;
+		this.descricao = descricao;
+		this.valor = valor;
+	}
+
+	public Servico(Integer id) {
+		this.id = id;
+	}
+
 	public Integer getId() {
 		return id;
 	}

@@ -9,25 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import barbearia.entity.Equipe;
-import barbearia.service.EquipeService;
+import barbearia.entity.Servico;
+import barbearia.service.ServicoService;
 import barbearia.util.UploadImagem;
 
-@WebServlet({"/equipe", "/del_e", "/edit_e", "/cadastrar_e"})
+@WebServlet({"/servico", "/del_s", "/edit_s", "/cadastrar_s"})
 @MultipartConfig
-public class ServletEquipe extends HttpServlet {
+public class ServletServico extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ServletEquipe() {
+	public ServletServico() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getServletPath().equalsIgnoreCase("/equipe")) {
+		if (request.getServletPath().equalsIgnoreCase("/servico")) {
 			carregaLista(request, response);
-		} else if (request.getServletPath().equalsIgnoreCase("/del_e")) {
-			new EquipeService().delete(new Equipe(Integer.parseInt(request.getParameter("id"))));
+		} else if (request.getServletPath().equalsIgnoreCase("/del_s")) {
+			new ServicoService().delete(new Servico(Integer.parseInt(request.getParameter("id"))));
 			carregaLista(request, response);
 		}
 		
@@ -35,21 +35,20 @@ public class ServletEquipe extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getServletPath().equalsIgnoreCase("/cadastrar_e")) {
+		if (request.getServletPath().equalsIgnoreCase("/cadastrar_s")) {
 
-			String nome = request.getParameter("nome");
-			String descricao = request.getParameter("descricao");
-			int tempo = Integer.parseInt(request.getParameter("tempo"));
+			String desc_service = request.getParameter("desc_service");
+			Double preco = Double.parseDouble(request.getParameter("preco"));
 			String foto = UploadImagem.save(request, response);
 			
-			new EquipeService().save(new Equipe(nome, descricao, foto, tempo));
-			response.sendRedirect("equipe");
+			new ServicoService().save(new Servico(desc_service, preco, foto));
+			response.sendRedirect("servico");
 		}
 	}
 	
 	private void carregaLista(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("equipe", new EquipeService().busca());
-		request.getRequestDispatcher("equipe.jsp").forward(request, response);		
+		request.setAttribute("servicos", new ServicoService().busca());
+		request.getRequestDispatcher("servicos.jsp").forward(request, response);		
 	}
 }

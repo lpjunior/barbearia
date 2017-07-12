@@ -68,7 +68,7 @@
 				<div class="col-md-2 sidebar">
 					<ul class="nav nav-pills nav-stacked">
 						<li class="${home_active ? 'active' : 'none'}"><a href="sistema.jsp">Página Inicial</a></li>
-						<li class="${equipe_active ? 'active' : 'none'}"><a href="equipe.jsp">Equipe</a></li>
+						<li class="${equipe_active ? 'active' : 'none'}"><a href="equipe">Equipe</a></li>
 						<li class="${servicos_active ? 'active' : 'none'}"><a href="servicos.jsp">Serviços</a></li>
 						<li class="${comentarios_active ? 'active' : 'none'}"><a href="comentarios.jsp">Comentários</a></li>
 					</ul>

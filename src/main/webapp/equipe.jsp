@@ -39,30 +39,31 @@
 													<tbody>
 														<!-- Incio informação Ativo/Inativo-->
 														<c:forEach var="funcionario"
-															items="${requestScope.funcionarios}">
+															items="${requestScope.equipe}">
 															<tr data-status="inativo">
 																<td class="formatacao_td" colspan="2">
 																	<h4>
-																		<small>Status:</small><span class="pull-left inativo">(Inativo)</span>
+																		<small>Status:</small><br>
+																		<span class="pull-left ativo">(Ativo)</span>
 																	</h4>
 																</td>
 																<td class="formatacao_td_image">
 																	<div class="media">
 																		<a href="#" class="pull-left"> <img
-																			src="http://i65.tinypic.com/2w7o7b7.png"
+																			src="resources/image/${funcionario.foto}"
 																			class="media-photo">
 																		</a>
 																	</div>
 																</td>
-																<td class="formatacao_td" colspan="2">Nome</td>
+																<td class="formatacao_td" colspan="2">${funcionario.nome}</td>
 																<td class="formatacao_td" colspan="2"><span
-																	class="media">Descrição...</span></td>
+																	class="media">${funcionario.desc}</span></td>
 																<td class="formatacao_td"><span class="pull-right">
 																		<button class="btn btn-default" data-toggle="modal"
 																			data-target="#modalEditarFuncionario" type="button">Editar</button>
-																		<button class="btn btn-success" type="button" disabled>Ativar</button>
-																		<button class="btn btn-warning" type="button" disabled>Desativar</button>
-																		<button class="btn btn-danger" type="button">Excluir</button>
+																		<button class="btn btn-success" onclick="location.href='enabled_e?id=${funcionario.id}'" type="button" disabled>Ativar</button>
+																		<button class="btn btn-warning" onclick="location.href='disabled_e?id=${funcionario.id}'" type="button" disabled>Desativar</button>
+																		<button class="btn btn-danger" onclick="location.href='del_e?id=${funcionario.id}'" type="button">Excluir</button>
 																</span></td>
 															</tr>
 														</c:forEach>
@@ -86,31 +87,32 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="col-md-6 col-sm-6 col-xs-8">
-											<form action="equipe?acao=cadastrar" method="post" enctype="multipart/form-data">
+											<form action="cadastrar_e" method="post"
+												enctype="multipart/form-data">
 												<fieldset>
-													<!-- Imagem e botão -->
 													<div class="form-group">
-														<label for="id_imagem">Escolher imagem:</label> <input
-															type="file" id="id_imagem" name="imagem" required>
+														<label for="if_foto">Escolher imagem:</label> <input
+															type="file" name="foto" id="if_foto" required />
 													</div>
-													<!-- Input Texto-->
 													<div class="form-group">
 														<label for="id_nome">Nome:</label> <input type="text"
 															id="id_nome" name="nome" class="form-control col-sm-6"
 															placeholder="Nome" required>
 													</div>
-													<!-- Input Texto-->
 													<div class="form-group">
 														<label for="id_descricao">Descrição:</label>
 														<textarea class="form-control" id="id_descricao"
-															name="descricao" placeholder="Decreva seu funcionário" required></textarea>
+															name="descricao" placeholder="Decreva seu funcionário"
+															required></textarea>
 													</div>
 													<div class="form-group">
 														<label for="id_tempo">Tempo de experiência:</label> <input
 															type="number" min=1 id="id_tempo" name="tempo"
-															class="form-control col-sm-6" placeholder="ex: 10" required>
+															class="form-control col-sm-6" placeholder="ex: 10"
+															required>
 													</div>
-														<button type="submit" class="btn btn-success pull-left" style="margin-top: 1.3%;">Enviar</button>
+													<button type="submit" class="btn btn-success pull-left"
+														style="margin-top: 1.3%;">Enviar</button>
 												</fieldset>
 											</form>
 										</div>
