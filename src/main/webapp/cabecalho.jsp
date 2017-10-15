@@ -1,11 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<c:set var="home_active" value="${fn:endsWith(pageContext.request.requestURI, 'sistema.jsp')}" />
-<c:set var="equipe_active" value="${fn:endsWith(pageContext.request.requestURI, 'equipe.jsp')}" />
-<c:set var="servicos_active" value="${fn:endsWith(pageContext.request.requestURI, 'servicos.jsp')}" />
-<c:set var="comentarios_active" value="${fn:endsWith(pageContext.request.requestURI, 'comentarios.jsp')}" />
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<c:set var="home_active"
+	value="${fn:endsWith(pageContext.request.requestURI, 'sistema.jsp')}" />
+<c:set var="equipe_active"
+	value="${fn:endsWith(pageContext.request.requestURI, 'equipe.jsp')}" />
+<c:set var="servicos_active"
+	value="${fn:endsWith(pageContext.request.requestURI, 'servicos.jsp')}" />
+<c:set var="comentarios_active"
+	value="${fn:endsWith(pageContext.request.requestURI, 'comentarios.jsp')}" />
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -21,6 +25,11 @@
 
 <link href="https://fonts.googleapis.com/css?family=Roboto"
 	rel="stylesheet">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 	<section>
@@ -67,9 +76,13 @@
 			<div class="container-fluid main-container">
 				<div class="col-md-2 sidebar">
 					<ul class="nav nav-pills nav-stacked">
-						<li class="${home_active ? 'active' : 'none'}"><a href="sistema.jsp">Página Inicial</a></li>
-						<li class="${equipe_active ? 'active' : 'none'}"><a href="equipe">Equipe</a></li>
-						<li class="${servicos_active ? 'active' : 'none'}"><a href="servicos.jsp">Serviços</a></li>
-						<li class="${comentarios_active ? 'active' : 'none'}"><a href="comentarios.jsp">Comentários</a></li>
+						<li class="${home_active ? 'active' : 'none'}"><a
+							href="sistema.jsp">Página Inicial</a></li>
+						<li class="${equipe_active ? 'active' : 'none'}"><a
+							href="equipe">Equipe</a></li>
+						<li class="${servicos_active ? 'active' : 'none'}"><a
+							href="servicos">Serviços</a></li>
+						<li class="${comentarios_active ? 'active' : 'none'}"><a
+							href="comentarios">Comentários</a></li>
 					</ul>
 				</div>

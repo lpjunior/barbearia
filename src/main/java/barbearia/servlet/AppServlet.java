@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import barbearia.service.ComentarioService;
 import barbearia.service.EquipeService;
@@ -27,11 +28,15 @@ public class AppServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/* Carrega as listas no contexto da requisição */
-		request.setAttribute("equipe", new EquipeService().busca());
-		request.setAttribute("galeria", new GaleriaService().busca());
-		request.setAttribute("servicos", new ServicoService().busca());
-		request.setAttribute("comentarios", new ComentarioService().busca());
 		
+		HttpSession session = request.getSession();
+		
+		if(session.getAttribute("equipe") == null) {
+			session.setAttribute("equipe", new EquipeService().busca());
+			session.setAttribute("galeria", new GaleriaService().busca());
+			session.setAttribute("servicos", new ServicoService().busca());
+			session.setAttribute("comentarios", new ComentarioService().buscaAtivos());
+		}
 		/* Redireciona para a home.jsp com as listas carregadas */
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}

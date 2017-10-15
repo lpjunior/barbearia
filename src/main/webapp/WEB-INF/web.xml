@@ -4,6 +4,41 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
 	<display-name>Barbearia Leopoldinense Webapp</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ServletController</display-name>
+		<servlet-name>ServletController</servlet-name>
+		<servlet-class>barbearia.servlet.ServletController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletController</servlet-name>
+		<url-pattern>/busca</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletController</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletController</servlet-name>
+		<url-pattern>/lista</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletController</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+<!-- 	<filter> -->
+<!-- 		<description> -->
+<!-- 		</description> -->
+<!-- 		<display-name>filtro</display-name> -->
+<!-- 		<filter-name>filtro</filter-name> -->
+<!-- 		<filter-class>barbearia.filter.filtro</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>filtro</filter-name> -->
+<!-- 		<url-pattern>/admin/*</url-pattern> -->
+<!-- 		<dispatcher>REQUEST</dispatcher> -->
+<!-- 	</filter-mapping> -->
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

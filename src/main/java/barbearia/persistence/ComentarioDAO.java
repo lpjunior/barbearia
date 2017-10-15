@@ -25,7 +25,10 @@ public class ComentarioDAO {
 	
 	public void update(Comentario c) {
 		manager.getTransaction().begin();
-		manager.merge(c);
+		Query query = manager.createQuery("UPDATE Comentario c SET ativo = :pAtivo WHERE c.id = :pId");
+		query.setParameter("pAtivo", c.isAtivo());
+		query.setParameter("pId", c.getId());
+		query.executeUpdate();
 		manager.getTransaction().commit();
 		manager.close();
 	}

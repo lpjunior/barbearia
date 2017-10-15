@@ -43,8 +43,18 @@ public class ServletEquipe extends HttpServlet {
 			String foto = UploadImagem.save(request, response);
 			
 			new EquipeService().save(new Equipe(nome, descricao, foto, tempo));
-			response.sendRedirect("equipe");
+		} else if (request.getServletPath().equalsIgnoreCase("/edit_e")) {
+
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			String nome = request.getParameter("nome");
+			String descricao = request.getParameter("descricao");
+			int tempo = Integer.parseInt(request.getParameter("tempo"));
+			String foto = UploadImagem.save(request, response);
+
+			new EquipeService().update(new Equipe(id, nome, descricao, foto, tempo));
+			
 		}
+		response.sendRedirect("equipe");
 	}
 	
 	private void carregaLista(HttpServletRequest request, HttpServletResponse response)

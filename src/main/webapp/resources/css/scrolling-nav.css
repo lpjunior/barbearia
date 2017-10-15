@@ -1,0 +1,249 @@
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+.home-section {
+    /*height: 100%;*/
+    padding-top:50px;
+    text-align: center;
+    margin-bottom:10%;
+}
+/* INICIO CSS SOBRE */
+.sobre-section {
+    /*height: 100%;*/
+    padding-top:140px;
+    text-align: center;
+    /*background:;*/
+}
+.alinhamento-sobre{
+    margin-bottom:12%;
+}
+.background--titulo{
+    /*background-color: #242323;*/
+    border-radius: 10px;
+}
+.titulo-barbearia-logo{
+    color: #242323;
+}
+.sobre-titulo{
+    margin-bottom:7%;
+}
+.container-sobre{
+    background-color:rgb(41,131,27);
+    margin-top: 1%;
+    color: #fff;
+}
+.alinhamento-img-sobre{
+	margin-bottom:5%;
+}
+.span-img-edit{
+}
+	.centralizar{
+		text-align:center;
+	}
+  .formtacao-container-sobre{
+  }
+  .frase-sobre{
+    padding: 25px;
+    margin-top:50px;
+  }
+  .texto-barbearia{
+    margin-top:5px;
+    margin-bottom: 15px;
+  }
+  .img-sobre-format{
+    margin-top:50px;ç
+  }
+/* FIM CSS SOBRE */
+
+/* INICIO CSS EQUIPE */
+.equipe-section {
+    background-color: #242323;
+    padding-top:140px;
+    text-align: center;
+    /*background-color: ;*/
+}
+#equipe{
+}
+.equipe-titulo{
+    color: #fff;
+    margin-bottom:7%;
+}
+.thumbnail-img-equipe{
+    margin-bottom:15%;
+}
+.img-nossa-equipe{
+    margin-bottom: 4%;
+}
+.funcionario-text{
+  margin-top: 15px;
+  color:#fff;
+}
+.img-funcionario{
+  border:1px  solid #fff;
+  border-radius:1px;
+  margin-top: 15px;
+}
+.borda-funcinario{
+  border: 3px solid #fff;
+  border-radius: 2px;
+  padding: 2px;
+}
+.descricao-funcionario{
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+}
+.detalhe-funcionario{
+  width: 50px;
+  color:red;
+}
+.img-quipe{
+  border-radius: 1px;
+}
+/* FIM CSS EQUIPE */
+
+/* INICIO DO CSS GALERIA */
+.galeria-section {
+    /*height: 100%;*/
+    padding-top:140px;
+    text-align: center;
+    margin-bottom:10%;
+}
+.background-galeria{
+}
+.img-galeria{
+  padding-top:20px;
+}
+/* FIM DO CSS GALERIA*/
+
+/* INICIO DO CSS SERVI�OS */
+.servicos-section {
+	background-image:url('resources/image/img3.jpg');
+    /*height: 100%;*/
+    padding-top:140px;
+    text-align: center;
+    background-color:#232424;
+    margin-bottom: 5%;
+    color: #fff;
+}
+.img-servicos{
+    margin-bottom:30px;
+    margin-top:10px;
+}
+.img-servicos-ativo{
+   border-bottom: 1px solid #fff;
+   border-right: 1px solid #fff;
+   border-left: 1px solid #fff;
+   border-radius: 4px;
+   border-right: 1px solid #fff;
+   border-left: 1px solid #fff;
+   border-top: 1px solid #fff;
+   box-shadow: 5px 5px 10px #0076a3;
+   -webkit-box-shadow: 5px 5px 10px #242323;
+   -moz-box-shadow: 5px 5px 10px #242323;
+   padding-bottom: 10px;
+}
+.descricao-servico{
+    margin-top:20px;
+    width: 10px;
+  }
+.descricao-servico-valor{
+  width: 10px;
+}
+/* FIM DO CSS SERVI�OS */
+
+/* INICIO DO CSS DEPOIMENTOS*/
+.depoimentos-section {
+    /* height: 100%;*/
+    padding-bottom:12%;
+    padding-top:140px;
+    text-align: center;
+}
+.conteudo-depoimentos{
+    margin-bottom:20%;
+}
+.conteudo-edit{
+    margin-bottom:15%;
+}
+.img-responsive .center-block .img-depo-user{
+	margin-bottom:5%;
+}
+#account-settings{
+  padding-top: 20px;
+}
+.color-depoimento-user{
+  color:#298E1B;
+}
+.nav .nav-tabs .active a,
+.nav .nav-tabs > li A:hover.
+.nav .nav-tab > a:focus{
+  color:fff;
+  background-color: red;
+}
+/* FIM DO CSS DEPOIMENTOS*/
+
+/* INICIO DO CSS CONTATO */
+.contato-section {
+    /* height: 100%;*/
+    background: -webkit-linear-gradient(#3CB371 , #298E1B, #006400); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#3CB371 , #298E1B, #006400); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top:140px;
+    text-align:center;
+    color:#fff;
+}
+.container-contato{
+}
+.contorno-input{
+    margin-bottom:5%;
+    background-color:rgba(192,192,192,.4);
+    padding:3%;
+    border-radius:10px;
+}
+.info-contato{
+    color: #fff;
+}
+.fale-conosco{
+  background-image: linear-gradient(  #232424,#232220,#232020);
+    background-color:rgba(192,192,192,.4);
+    padding:3%;
+    border-radius:10px;
+    margin-bottom:2%;
+    color:#fff;
+}
+.conteudo-edit-contato{
+	margin-bottom:5%;
+}
+.copyright{
+	padding-bottom:5px;
+}
+.mapa-section {
+    padding-top:70px;
+}
+.form-edit{
+	padding-top:5%;
+}
+. form-edit-campos{
+	padding-top:10%;
+}
+.espaco-msg{
+	margin-top:3.3%;
+	margin-bottom:6%;
+}
+.help-block{
+  color:#fff;
+}
+.edit-end{
+	margin-top:6%;
+}
+.back-fundo{
+	padding:1%;
+	border-radius:3px;
+}
+/* FIM DO CSS CONTATO */

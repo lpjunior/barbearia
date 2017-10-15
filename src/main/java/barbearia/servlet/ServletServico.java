@@ -13,7 +13,7 @@ import barbearia.entity.Servico;
 import barbearia.service.ServicoService;
 import barbearia.util.UploadImagem;
 
-@WebServlet({"/servico", "/del_s", "/edit_s", "/cadastrar_s"})
+@WebServlet({"/servicos", "/del_s", "/edit_s", "/cadastrar_s"})
 @MultipartConfig
 public class ServletServico extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class ServletServico extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getServletPath().equalsIgnoreCase("/servico")) {
+		if (request.getServletPath().equalsIgnoreCase("/servicos")) {
 			carregaLista(request, response);
 		} else if (request.getServletPath().equalsIgnoreCase("/del_s")) {
 			new ServicoService().delete(new Servico(Integer.parseInt(request.getParameter("id"))));
@@ -42,7 +42,16 @@ public class ServletServico extends HttpServlet {
 			String foto = UploadImagem.save(request, response);
 			
 			new ServicoService().save(new Servico(desc_service, preco, foto));
-			response.sendRedirect("servico");
+			response.sendRedirect("servicos");
+		} else if (request.getServletPath().equalsIgnoreCase("/edit_s")) {
+
+			Integer id = Integer.parseInt(request.getParameter("id"));
+			String desc_service = request.getParameter("desc_service");
+			Double preco = Double.parseDouble(request.getParameter("preco"));
+			String foto = UploadImagem.save(request, response);
+			
+			new ServicoService().update(new Servico(id, foto, desc_service, preco));
+			response.sendRedirect("servicos");
 		}
 	}
 	
